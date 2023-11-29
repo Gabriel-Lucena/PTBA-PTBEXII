@@ -1,4 +1,3 @@
-
 CREATE DATABASE floodguard;
 
 USE floodguard;
@@ -10,25 +9,20 @@ CREATE TABLE tblUf
     nome VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE tblBairro
-(
-    idBairro INT NOT NULL IDENTITY,
-    nome VARCHAR(50) NOT NULL UNIQUE,
-    idCidade INT NOT NULL,
-    idUf INT NOT NULL,
-    PRIMARY KEY(idBairro, idCidade, idBairro),
-    FOREIGN KEY(idCidade) REFERENCES idCidade(tblCidade),
-    FOREIGN KEY(idUf) REFERENCES tblUf(idUf)
-);
-
-
 CREATE TABLE tblCidade
 (
-    idCidade INT NOT NULL IDENTITY,
-    nome VARCHAR(50) UNIQUE NOT NULL,
-    idUf INT NOT NULL UNIQUE,
-    PRIMARY KEY(idCidade, idUf),
-    FOREIGN KEY(idUf) REFERENCES tblUf(idUf)
+    idCidade INT NOT NULL PRIMARY KEY IDENTITY,
+    nome VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE tblBairro
+(
+    idBairro INT NOT NULL PRIMARY KEY IDENTITY,
+    nome VARCHAR(50) NOT NULL,
+    idCidade INT NOT NULL,
+    idUf INT NOT NULL,
+    FOREIGN KEY(idUf) REFERENCES tblUf(idUf),
+    FOREIGN KEY(idCidade) REFERENCES tblCidade(idCidade)
 );
 
 CREATE TABLE tblUsuario
@@ -41,19 +35,13 @@ CREATE TABLE tblUsuario
 
 CREATE TABLE tblUsuarioComum
 (
-    idUsuario INT NOT NULL,
+    idUsuario INT NOT NULL PRIMARY KEY,
     idBairro INT NOT NULL,
-    idCidade INT NOT NULL,
-    idUf INT NOT NULL,
-    PRIMARY KEY(idUsuario, idCidade, idUf),
     FOREIGN KEY(idUsuario) REFERENCES tblUsuario(idUsuario),
     FOREIGN KEY(idBairro) REFERENCES tblBairro(idBairro),
-    FOREIGN KEY(idCidade) REFERENCES tblBairro(idCidade),
-    FOREIGN KEY(idUf) REFERENCES tblBairro(idUf)
 );
 
 CREATE TABLE tblAdministrador
-
 (
     idAdministrador INT NOT NULL PRIMARY KEY IDENTITY
 );
@@ -84,13 +72,9 @@ CREATE TABLE tblPublicacao
     texto TEXT NOT NULL,
     idUsuario INT NOT NULL,
     idBairro INT NOT NULL,
-    idCidade INT NOT NULL,
-    idUF INT NOT NULL,
     FOREIGN KEY(idUsuario) REFERENCES tblUsuario(idUsuario),
-    FOREIGN KEY(idBairro) REFERENCES tblBairro(idBairro),
-    FOREIGN KEY(idUF) REFERENCES tblBairro(idUf),
-    FOREIGN KEY(idCidade) REFERENCES tblBairro(idCidade)
-)
+    FOREIGN KEY(idBairro) REFERENCES tblBairro(idBairro)
+);
 
 CREATE TABLE tblComentario
 (
@@ -101,7 +85,7 @@ CREATE TABLE tblComentario
     idUsuario INT NOT NULL,
     FOREIGN KEY(idPublicacao) REFERENCES tblPublicacao(idPublicacao),
     FOREIGN KEY(idUsuario) REFERENCES tblUsuario(idUsuario)
-);;
+);
 
 CREATE TABLE tblComentarioResposta
 (
@@ -131,7 +115,7 @@ CREATE TABLE tblUsuarioAlerta
 (
     idUsuario INT NOT NULL,
     idAlerta INT NOT NULL,
-    PRIMARY KEY (idUsuario, idAlerta),
+    PRIMARY KEY (idUsuario),
     FOREIGN KEY (idUsuario) REFERENCES tblUsuarioComum(idUsuario),
     FOREIGN KEY (idAlerta) REFERENCES tblAlerta(idAlerta)
 );
