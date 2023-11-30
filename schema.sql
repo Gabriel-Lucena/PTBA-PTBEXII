@@ -43,7 +43,8 @@ CREATE TABLE tblUsuarioComum
 
 CREATE TABLE tblAdministrador
 (
-    idAdministrador INT NOT NULL PRIMARY KEY IDENTITY
+    idAdministrador INT NOT NULL PRIMARY KEY,
+    FOREIGN KEY(idAdministrador) REFERENCES tblUsuario(idUsuario)
 );
 
 CREATE TABLE tblAcao
@@ -93,7 +94,9 @@ CREATE TABLE tblComentarioResposta
     idComentario INT NOT NULL,
     dataComentario DATE NOT NULL,
     texto VARCHAR(100) NOT NULL,
-    FOREIGN KEY (idComentario) REFERENCES tblComentario(idComentario)
+    idUsuario INT NOT NULL,
+    FOREIGN KEY(idComentario) REFERENCES tblComentario(idComentario),
+    FOREIGN KEY(idUsuario) REFERENCES tblUsuario(idUsuario)
 );
 
 CREATE TABLE tblNivel
