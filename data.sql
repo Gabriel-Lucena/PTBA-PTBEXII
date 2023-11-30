@@ -18,33 +18,42 @@ INSERT INTO tblBairro VALUES ('Trindade', 3, 3);
 INSERT INTO tblBairro VALUES ('Espinheiro', 4, 4);
 INSERT INTO tblBairro VALUES ('Adrianópolis', 5, 5);
 
-INSERT INTO tblUsuario VALUES ('Gabriel', '2023-11-22 14:33:20', 'gabriel123');
-INSERT INTO tblUsuario VALUES ('Bruno', '2023-10-23 10:20:40', 'bruno123');
-INSERT INTO tblUsuario VALUES ('Mateus', '2023-04-25 16:05:23', 'mateus123');
-INSERT INTO tblUsuario VALUES ('Fedro', '2023-05-26 07:53:45', 'fedro123');
-INSERT INTO tblUsuario VALUES ('Calíope', '2023-11-05 01:07:32', 'caliope123');
+INSERT INTO tblUsuario VALUES ('Gabriel', '20231122 14:33:20 PM', 'gabriel123');
+INSERT INTO tblUsuario VALUES ('Bruno', '20231023 10:20:40 AM', 'bruno123');
+INSERT INTO tblUsuario VALUES ('Mateus', '20230425 16:05:23 PM', 'mateus123');
+INSERT INTO tblUsuario VALUES ('Fedro', '20230526 07:53:45 AM', 'fedro123');
+INSERT INTO tblUsuario VALUES ('Calíope', '20231105 01:07:32 AM', 'caliope123');
 
-INSERT INTO tblUsuarioComum VALUES (2, 2);
-INSERT INTO tblUsuarioComum VALUES (3, 3);
-INSERT INTO tblUsuarioComum VALUES (4, 4);
-INSERT INTO tblUsuarioComum VALUES (5, 5);
+SELECT * FROM tblUsuario;
+SELECT * FROM tblBairro;
 
-INSERT INTO tblAdministrador VALUES (1);
+INSERT INTO tblUsuarioComum VALUES (5, 2);
+INSERT INTO tblUsuarioComum VALUES (7, 3);
+INSERT INTO tblUsuarioComum VALUES (8, 4);
+INSERT INTO tblUsuarioComum VALUES (9, 5);
+
+SELECT * FROM tblUsuarioComum;
+
+INSERT INTO tblAdministrador VALUES (10);
 
 INSERT INTO tblAcao VALUES ('Banir');
 INSERT INTO tblAcao VALUES ('Notificar');
 INSERT INTO tblAcao VALUES ('Suspender Conta');
 
-INSERT INTO tblUsuarioAdministrador VALUES (2, 1, 1);
-INSERT INTO tblUsuarioAdministrador VALUES (3, 1, 2);
-INSERT INTO tblUsuarioAdministrador VALUES (4, 1, 3);
-INSERT INTO tblUsuarioAdministrador VALUES (5, 1, 1);
+INSERT INTO tblUsuarioAdministrador VALUES (5, 10, 1);
+INSERT INTO tblUsuarioAdministrador VALUES (7, 10, 2);
+INSERT INTO tblUsuarioAdministrador VALUES (8, 10, 3);
+INSERT INTO tblUsuarioAdministrador VALUES (9, 10, 1);
 
-INSERT INTO tblPublicacao VALUES ('2023-11-23 14:33:20', 'Prováveis Enchentes', 1, 1);
-INSERT INTO tblPublicacao VALUES ('2023-10-24 10:20:40', 'Enchentes', 2, 2);
-INSERT INTO tblPublicacao VALUES ('2023-04-26 16:05:23', 'Chuvas Fortes', 3, 3);
-INSERT INTO tblPublicacao VALUES ('2023-05-27 07:53:45', 'Pancadas de Chuva', 4, 4);
-INSERT INTO tblPublicacao VALUES ('2023-11-06 01:07:32', 'Grandes Chances de Alagamento', 5, 5);
+SELECT * FROM tblUsuarioAdministrador;
+
+INSERT INTO tblPublicacao VALUES ('20231123 14:33:20 PM', 'Prováveis Enchentes', 5, 1);
+INSERT INTO tblPublicacao VALUES ('20231024 10:20:40 AM', 'Enchentes', 10, 2);
+INSERT INTO tblPublicacao VALUES ('20230426 16:05:23 PM', 'Chuvas Fortes', 7, 3);
+INSERT INTO tblPublicacao VALUES ('20230527 07:53:45 AM', 'Pancadas de Chuva', 8, 4);
+INSERT INTO tblPublicacao VALUES ('20231106 01:07:32 AM', 'Grandes Chances de Alagamento', 9, 5);
+
+SELECT * FROM tblPublicacao;
 
 INSERT INTO tblComentario VALUES ('2023-11-23 15:33:20', 'Parece que está começando a chover!', 1, 1);
 INSERT INTO tblComentario VALUES ('2023-10-24 11:20:40', 'Enchentes na proximidades', 2, 2);
