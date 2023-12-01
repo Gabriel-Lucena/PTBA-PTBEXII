@@ -27,52 +27,60 @@ INSERT INTO tblUsuario VALUES ('Calíope', '20231105 01:07:32 AM', 'caliope123')
 SELECT * FROM tblUsuario;
 SELECT * FROM tblBairro;
 
-INSERT INTO tblUsuarioComum VALUES (5, 2);
-INSERT INTO tblUsuarioComum VALUES (7, 3);
-INSERT INTO tblUsuarioComum VALUES (8, 4);
-INSERT INTO tblUsuarioComum VALUES (9, 5);
+INSERT INTO tblUsuarioComum VALUES (1, 2);
+INSERT INTO tblUsuarioComum VALUES (2, 3);
+INSERT INTO tblUsuarioComum VALUES (3, 4);
+INSERT INTO tblUsuarioComum VALUES (4, 5);
 
 SELECT * FROM tblUsuarioComum;
 
-INSERT INTO tblAdministrador VALUES (10);
+INSERT INTO tblAdministrador VALUES (1);
 
 INSERT INTO tblAcao VALUES ('Banir');
 INSERT INTO tblAcao VALUES ('Notificar');
 INSERT INTO tblAcao VALUES ('Suspender Conta');
 
-INSERT INTO tblUsuarioAdministrador VALUES (5, 10, 1);
-INSERT INTO tblUsuarioAdministrador VALUES (7, 10, 2);
-INSERT INTO tblUsuarioAdministrador VALUES (8, 10, 3);
-INSERT INTO tblUsuarioAdministrador VALUES (9, 10, 1);
+INSERT INTO tblUsuarioAdministrador VALUES (2, 1, 1);
+INSERT INTO tblUsuarioAdministrador VALUES (3, 1, 2);
+INSERT INTO tblUsuarioAdministrador VALUES (4, 1, 3);
+INSERT INTO tblUsuarioAdministrador VALUES (5, 1, 1);
 
 SELECT * FROM tblUsuarioAdministrador;
 
-INSERT INTO tblPublicacao VALUES ('20231123 14:33:20 PM', 'Prováveis Enchentes', 5, 1);
-INSERT INTO tblPublicacao VALUES ('20231024 10:20:40 AM', 'Enchentes', 10, 2);
-INSERT INTO tblPublicacao VALUES ('20230426 16:05:23 PM', 'Chuvas Fortes', 7, 3);
-INSERT INTO tblPublicacao VALUES ('20230527 07:53:45 AM', 'Pancadas de Chuva', 8, 4);
-INSERT INTO tblPublicacao VALUES ('20231106 01:07:32 AM', 'Grandes Chances de Alagamento', 9, 5);
+INSERT INTO tblPublicacao VALUES ('20231123 14:33:20 PM', 'Prováveis Enchentes', 1, 1);
+INSERT INTO tblPublicacao VALUES ('20231024 10:20:40 AM', 'Enchentes', 2, 2);
+INSERT INTO tblPublicacao VALUES ('20230426 16:05:23 PM', 'Chuvas Fortes', 3, 3);
+INSERT INTO tblPublicacao VALUES ('20230527 07:53:45 AM', 'Pancadas de Chuva', 4, 4);
+INSERT INTO tblPublicacao VALUES ('20231106 01:07:32 AM', 'Grandes Chances de Alagamento', 5, 5);
 
 SELECT * FROM tblPublicacao;
 
-INSERT INTO tblComentario VALUES ('2023-11-23 15:33:20', 'Parece que está começando a chover!', 1, 1);
-INSERT INTO tblComentario VALUES ('2023-10-24 11:20:40', 'Enchentes na proximidades', 2, 2);
-INSERT INTO tblComentario VALUES ('2023-04-26 17:05:23', 'Está chovendo muito forte!', 3, 3);
-INSERT INTO tblComentario VALUES ('2023-05-27 08:53:45', 'Nuvens carregadas', 4, 4);
-INSERT INTO tblComentario VALUES ('2023-11-06 02:07:32', 'A água está muito forte', 5, 5);
+INSERT INTO tblComentario VALUES ('20231123 15:33:20 PM', 'Parece que está começando a chover!', 1, 1);
+INSERT INTO tblComentario VALUES ('20231024 11:20:40 AM', 'Enchentes na proximidades', 2, 2);
+INSERT INTO tblComentario VALUES ('20230426 17:05:23 PM', 'Está chovendo muito forte!', 3, 3);
+INSERT INTO tblComentario VALUES ('20230527 08:53:45 AM', 'Nuvens carregadas', 4, 4);
+INSERT INTO tblComentario VALUES ('20231106 02:07:32 AM', 'A água está muito forte', 5, 5);
 
-INSERT INTO tblComentarioResposta VALUES (1, '2023-11-23 16:33:20', 'Aqui também!', 1);
-INSERT INTO tblComentarioResposta VALUES (2, '2023-10-24 12:20:40', '', 2);
-INSERT INTO tblComentarioResposta VALUES (3, '2023-04-26 19:05:23', '', 3);
+SELECT * FROM tblComentario;
+
+INSERT INTO tblComentarioResposta VALUES (1, '20231123 16:33:20 PM', 'Aqui também!', 1);
+INSERT INTO tblComentarioResposta VALUES (2, '20231024 12:20:40 PM', 'Já começou a temporada das enchentes', 2);
+INSERT INTO tblComentarioResposta VALUES (3, '20230426 19:05:23 PM', 'Está escuro, a previsão do tempo disse que iria chover hoje.', 3);
+
+SELECT * FROM tblComentarioResposta;
 
 INSERT INTO tblNivel VALUES ('Baixo');
 INSERT INTO tblNivel VALUES ('Médio');
 INSERT INTO tblNivel VALUES ('Alto');
 
-INSERT INTO tblAlerta VALUES ('2023-11-23 16:33:20', 'Chance média de chuva', 1);
-INSERT INTO tblAlerta VALUES ('2023-04-26 18:05:23', 'Chuvas torrenciais', 2);
-INSERT INTO tblAlerta VALUES ('2023-10-24 12:20:40', 'Chuvas fortes', 3);
+INSERT INTO tblAlerta VALUES ('20231123 16:33:20 PM', 'Chance média de chuva', 1);
+INSERT INTO tblAlerta VALUES ('20230426 18:05:23 PM', 'Chuvas torrenciais', 2);
+INSERT INTO tblAlerta VALUES ('20231024 12:20:40 PM', 'Chuvas fortes', 3);
 
-INSERT INTO tblUsuarioAlerta VALUES (2, 2);
-INSERT INTO tblUsuarioAlerta VALUES (3, 3);
-INSERT INTO tblUsuarioAlerta VALUES (4, 4);
+SELECT * FROM tblAlerta;
+
+INSERT INTO tblUsuarioAlerta VALUES (2, 1);
+INSERT INTO tblUsuarioAlerta VALUES (3, 2);
+INSERT INTO tblUsuarioAlerta VALUES (4, 3);
+
+SELECT * FROM tblUsuarioAlerta;
