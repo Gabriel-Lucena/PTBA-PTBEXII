@@ -84,3 +84,19 @@ INSERT INTO tblUsuarioAlerta VALUES (3, 2);
 INSERT INTO tblUsuarioAlerta VALUES (4, 3);
 
 SELECT * FROM tblUsuarioAlerta;
+
+--
+
+SELECT nome, dataCriacao FROM tblUsuario;
+
+SELECT texto FROM tblPublicacao WHERE idBairro = 2;
+
+SELECT texto FROM tblPublicacao WHERE idBairro = 2;
+
+SELECT texto FROM tblComentario WHERE dataComentario BETWEEN '20230101 00:00:00 AM' AND '20231231 23:59:59 PM';
+
+SELECT texto from tblPublicacao Where texto like 'Enchentes';
+
+SELECT nome from tblBairro ORDER BY nome;
+
+SELECT nome from tblUsuario ORDER BY nome;

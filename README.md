@@ -1,2 +1,3 @@
 # Projeto de Extensão - Previsão de Enchentes
 
+Repositório do [modelo físico](https://en.wikipedia.org/wiki/Physical_schema) do [projeto de extensão II](https://ptb.ifsp.edu.br/index.php/component/k2/item/1591-Evento%20GITESDevelop%20destaca%20trabalhos%20desenvolvidos%20com%20a%20curriculariza%C3%A7%C3%A3o%20da%20extens%C3%A3o%20no%20curso%20de%20TADS) do segundo semestre do curso de [Análise e Desenvolvimento de Sistemas](https://ptb.ifsp.edu.br/index.php/superiores/ads) do [IFSP-Pirituba](https://ptb.ifsp.edu.br/). Nosso projeto busca estabelecer técnicas de preivsão e alerta de enchentes aos moradores áreas de risco.
